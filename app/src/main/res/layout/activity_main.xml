@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/stuNumText"
         android:layout_toRightOf="@+id/buildingNumText"
-        android:text="1701210920"
+        android:text="test"
         android:textSize="20sp"
         android:textColor="@android:color/black"/>
 

@@ -40,7 +40,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 case CHECK_NUM_AND_PWD:
                     if(msg.obj.equals("1")){
                         Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                        i.putExtra("stu_num","1701210920");
+                        i.putExtra("stu_num",numEdit.getText().toString());
                         startActivity(i);
                         Toast.makeText(LoginActivity.this,"登录成功！", Toast.LENGTH_LONG).show();
                     }

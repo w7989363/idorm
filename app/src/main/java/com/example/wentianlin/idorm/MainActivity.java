@@ -1,6 +1,7 @@
 package com.example.wentianlin.idorm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,8 +26,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent i = getIntent();
         stuNumText = (TextView)findViewById(R.id.stuNumText);
-        stuNumText.setText("123213");
+        stuNumText.setText(i.getStringExtra("stu_num"));
         buildingSpin = (Spinner)findViewById(R.id.buildingNumSpin);
         buildingSpin.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,buildingData));
         buildingSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
