@@ -1,6 +1,7 @@
 package com.example.wentianlin.idorm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,8 @@ import java.net.URL;
 public class LoginActivity extends Activity implements View.OnClickListener {
     private static final int CHECK_NUM_AND_PWD = 1;
     private ImageView loginBtn;
+    private EditText numEdit;
+    private EditText pwdEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +39,10 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             switch (msg.what) {
                 case CHECK_NUM_AND_PWD:
                     if(msg.obj.equals("1")){
-
+                        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                        i.putExtra("stu_num","1701210920");
+                        startActivity(i);
+                        Toast.makeText(LoginActivity.this,"登录成功！", Toast.LENGTH_LONG).show();
                     }
                     else{
                         Toast.makeText(LoginActivity.this,"学号或密码错误！", Toast.LENGTH_LONG).show();
@@ -54,8 +60,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         //点击登录按钮
         if(v.getId() == R.id.loginBtn){
             //获取输入
-            EditText numEdit = (EditText)findViewById(R.id.numEditText);
-            EditText pwdEdit= (EditText)findViewById(R.id.pwdEditText);
+            numEdit = (EditText)findViewById(R.id.numEditText);
+            pwdEdit= (EditText)findViewById(R.id.pwdEditText);
             String numText = numEdit.getText().toString();
             String pwdText = pwdEdit.getText().toString();
             Log.d("debug",numText);
@@ -66,7 +72,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
     //验证账号密码
     private void checkNumPwd(String num, String pwd){
-        final String address = "http://wthrcdn.etouch.cn/WeatherApi?citykey=101010100";
+        final String address = "http://45.78.15.145/test.php";
         new Thread(new Runnable() {
             @Override
             public void run() {

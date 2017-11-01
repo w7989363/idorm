@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stuNumTag"
+        android:text="学号："
+        android:layout_toLeftOf="@+id/buildingNumSpin"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stuNumText"
+        android:layout_toRightOf="@+id/buildingNumText"
+        android:text="1701210920"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buildingNumText"
+        android:text="宿舍楼："
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/stuNumTag"
+        android:layout_toLeftOf="@+id/buildingNumSpin"
+        android:layout_marginTop="70sp"/>
+
+    <Spinner
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/buildingNumSpin"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/stuNumText"
+        android:layout_marginTop="70dp">
+
+    </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dormNumText"
+        android:text="寝室号："
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/buildingNumText"
+        android:layout_marginTop="50dp"
+        android:layout_toLeftOf="@+id/dormNumSpin"/>
+
+    <Spinner
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dormNumSpin"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/buildingNumSpin"
+        android:layout_marginTop="50dp">
+
+    </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leftNumTag"
+        android:text="空床位："
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/dormNumText"
+        android:layout_marginTop="50dp"
+        android:layout_toLeftOf="@+id/dormNumSpin"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leftNumText"
+        android:text="4"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/dormNumSpin"
+        android:layout_toRightOf="@+id/leftNumTag"
+        android:layout_marginTop="50dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/submitBtn"
+        android:src="@drawable/submit_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/leftNumText"
+        android:layout_marginTop="50dp"/>
+
+</RelativeLayout>
