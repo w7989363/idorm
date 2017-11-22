@@ -50,7 +50,7 @@
         android:gravity="center_horizontal"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=""/>
+        android:text="1701210921"/>
 
     <TextView
         android:id="@+id/pwdText"
@@ -76,7 +76,7 @@
         android:gravity="center_horizontal"
         android:ems="10"
         android:inputType="numberPassword"
-        android:text="">
+        android:text="1701210921">
 
         <requestFocus />
     </EditText>
