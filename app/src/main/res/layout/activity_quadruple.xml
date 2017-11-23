@@ -65,7 +65,7 @@
         android:id="@+id/left5Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="五号楼："
+        android:text="五号楼：0"
         android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_below="@+id/leftText"/>
@@ -74,7 +74,7 @@
         android:id="@+id/left8Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="八号楼："
+        android:text="八号楼：0"
         android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_below="@+id/left5Text"/>
@@ -83,7 +83,7 @@
         android:id="@+id/left9Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="九号楼："
+        android:text="九号楼：0"
         android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_below="@+id/left8Text"/>
@@ -92,7 +92,7 @@
         android:id="@+id/left13Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="十三号楼："
+        android:text="十三号楼：0"
         android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_below="@+id/left9Text"/>
@@ -101,7 +101,7 @@
         android:id="@+id/left14Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="十四号楼："
+        android:text="十四号楼：0"
         android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_below="@+id/left13Text"/>
@@ -154,7 +154,10 @@
         android:textColor="@android:color/black"
         android:layout_below="@+id/roommateText"
         android:layout_toRightOf="@+id/v1codeText"
-        android:ems="10"/>
+        android:ems="10"
+        android:singleLine="true"
+        android:inputType="number"
+        android:maxLength="10"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -172,7 +175,8 @@
         android:textColor="@android:color/black"
         android:layout_below="@+id/stu1idText"
         android:layout_toRightOf="@+id/v1codeText"
-        android:ems="10"/>
+        android:ems="10"
+        android:singleLine="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -192,7 +196,10 @@
         android:textColor="@android:color/black"
         android:layout_below="@+id/v1codeText"
         android:layout_toRightOf="@+id/v2codeText"
-        android:ems="10"/>
+        android:ems="10"
+        android:singleLine="true"
+        android:inputType="number"
+        android:maxLength="10"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -210,7 +217,8 @@
         android:textColor="@android:color/black"
         android:layout_below="@+id/stu2idText"
         android:layout_toRightOf="@+id/v2codeText"
-        android:ems="10"/>
+        android:ems="10"
+        android:singleLine="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -230,7 +238,10 @@
         android:textColor="@android:color/black"
         android:layout_below="@+id/v2codeText"
         android:layout_toRightOf="@+id/v3codeText"
-        android:ems="10"/>
+        android:ems="10"
+        android:singleLine="true"
+        android:inputType="number"
+        android:maxLength="10"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -248,45 +259,8 @@
         android:textColor="@android:color/black"
         android:layout_below="@+id/stu3idText"
         android:layout_toRightOf="@+id/v3codeText"
-        android:ems="10"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/stu4idText"
-        android:text="4学号："
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:layout_below="@+id/v3codeText"
-        android:layout_marginTop="5dp"/>
-    <EditText
-        android:id="@+id/stu4idEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="10sp"
-        android:textColor="@android:color/black"
-        android:layout_below="@+id/v3codeText"
-        android:layout_toRightOf="@+id/v4codeText"
-        android:ems="10"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/v4codeText"
-        android:text="4校验码："
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:layout_below="@+id/stu4idText" />
-    <EditText
-        android:id="@+id/v4codeEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="10sp"
-        android:textColor="@android:color/black"
-        android:layout_below="@+id/stu4idText"
-        android:layout_toRightOf="@+id/v4codeText"
-        android:ems="10"/>
+        android:ems="10"
+        android:singleLine="true"/>
 
 
     <ImageView
@@ -295,7 +269,7 @@
         android:id="@+id/submitBtn"
         android:src="@drawable/submit_btn"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/v4codeText"
+        android:layout_below="@+id/v3codeText"
         android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

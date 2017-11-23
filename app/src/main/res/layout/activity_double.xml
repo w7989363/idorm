@@ -127,6 +127,57 @@
 
     </Spinner>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/roommateText"
+        android:text="同住人信息"
+        android:textSize="15sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/buildingNumText"
+        android:layout_marginTop="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stu1idText"
+        android:text="1学号："
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/roommateText" />
+    <EditText
+        android:id="@+id/stu1idEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/roommateText"
+        android:layout_toRightOf="@+id/v1codeText"
+        android:ems="10"
+        android:singleLine="true"
+        android:inputType="number"
+        android:maxLength="10"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/v1codeText"
+        android:text="1校验码："
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/stu1idText" />
+    <EditText
+        android:id="@+id/v1codeEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/stu1idText"
+        android:layout_toRightOf="@+id/v1codeText"
+        android:ems="10"
+        android:singleLine="true"/>
+
 
     <ImageView
         android:layout_width="150dp"
@@ -134,7 +185,7 @@
         android:id="@+id/submitBtn"
         android:src="@drawable/submit_btn"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/buildingNumText"
+        android:layout_below="@+id/v1codeText"
         android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

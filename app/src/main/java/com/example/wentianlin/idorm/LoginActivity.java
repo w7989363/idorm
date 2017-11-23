@@ -45,7 +45,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         loginBtn = (ImageView) findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(this);
 
-        onClick(loginBtn);
+        //onClick(loginBtn);
     }
 
     private Handler mHandler = new Handler(){
@@ -79,12 +79,15 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 //                                i.putExtra("stuid",numEdit.getText().toString());
 //                                startActivity(i);
                                 //未选宿舍，转到quadrupleActivity
-                                Intent i = new Intent(LoginActivity.this, QuadrupleActivity.class);
+                                Intent i = new Intent(LoginActivity.this, SelectModeActivity.class);
                                 i.putExtra("stuid",numEdit.getText().toString());
                                 startActivity(i);
                             }
                             else{
                                 //已选宿舍，转到success
+                                Intent i = new Intent(LoginActivity.this, InfoActivity.class);
+                                i.putExtra("stuid",numEdit.getText().toString());
+                                startActivity(i);
                             }
 
                         }

@@ -18,15 +18,33 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SelectModeActivity">
+        <activity android:name=".SelectModeActivity"
+            android:launchMode="singleTask">
 
         </activity>
 
-        <activity android:name=".SingleActivity">
+        <activity android:name=".InfoActivity"
+            android:launchMode="singleTask">
 
         </activity>
 
-        <activity android:name=".QuadrupleActivity">
+        <activity android:name=".SingleActivity"
+            android:launchMode="singleTask">
+
+        </activity>
+
+        <activity android:name=".DoubleActivity"
+            android:launchMode="singleTask">
+
+        </activity>
+
+        <activity android:name=".TripleActivity"
+            android:launchMode="singleTask">
+
+        </activity>
+
+        <activity android:name=".QuadrupleActivity"
+            android:launchMode="singleTask">
 
         </activity>
     </application>

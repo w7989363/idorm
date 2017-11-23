@@ -49,8 +49,10 @@
         android:layout_toRightOf="@+id/numText"
         android:gravity="center_horizontal"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="1701210921"/>
+        android:text="1701210921"
+        android:singleLine="true"
+        android:inputType="number"
+        android:maxLength="10"/>
 
     <TextView
         android:id="@+id/pwdText"

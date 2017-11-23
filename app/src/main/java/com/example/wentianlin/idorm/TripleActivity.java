@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,10 +37,10 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * Created by wentianlin on 2017/11/1.
+ * Created by wentianlin on 2017/11/23.
  */
 
-public class SingleActivity extends Activity implements View.OnClickListener {
+public class TripleActivity extends Activity implements View.OnClickListener {
     private static final int GET_STU_DETAIL = 2;
     private static final int GET_ROOM = 3;
     private static final int SELECT_ROOM = 4;
@@ -54,6 +53,10 @@ public class SingleActivity extends Activity implements View.OnClickListener {
     private TextView left9Text;
     private TextView left13Text;
     private TextView left14Text;
+    private EditText stu1id;
+    private EditText stu2id;
+    private EditText v1code;
+    private EditText v2code;
 
     private List<String> buildingData;
     private JSONObject stuData;
@@ -61,7 +64,7 @@ public class SingleActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single);
+        setContentView(R.layout.activity_triple);
 
         Intent i = getIntent();
 
@@ -73,7 +76,10 @@ public class SingleActivity extends Activity implements View.OnClickListener {
         left9Text = (TextView)findViewById(R.id.left9Text);
         left13Text = (TextView)findViewById(R.id.left13Text);
         left14Text = (TextView)findViewById(R.id.left14Text);
-
+        stu1id = (EditText)findViewById(R.id.stu1idEdit);
+        stu2id = (EditText)findViewById(R.id.stu2idEdit);
+        v1code = (EditText)findViewById(R.id.v1codeEdit);
+        v2code = (EditText)findViewById(R.id.v2codeEdit);
 
         buildingSpin = (Spinner)findViewById(R.id.buildingNumSpin);
         //buildingSpin.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,buildingData));
@@ -96,8 +102,6 @@ public class SingleActivity extends Activity implements View.OnClickListener {
 
         //获取信息，更新UI
         getStuDetail(i.getStringExtra("stuid"));
-
-
     }
 
     @Override
@@ -130,7 +134,7 @@ public class SingleActivity extends Activity implements View.OnClickListener {
                             }
                         }
                         else{
-                            Toast.makeText(SingleActivity.this,"学号错误！", Toast.LENGTH_LONG).show();
+                            Toast.makeText(TripleActivity.this,"学号错误！", Toast.LENGTH_LONG).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -162,11 +166,11 @@ public class SingleActivity extends Activity implements View.OnClickListener {
                                 buildingData.add(new String("14"));
                             }
                             //设置spinner适配器
-                            buildingSpin.setAdapter(new ArrayAdapter<String>(SingleActivity.this,android.R.layout.simple_spinner_item,buildingData));
+                            buildingSpin.setAdapter(new ArrayAdapter<String>(TripleActivity.this,android.R.layout.simple_spinner_item,buildingData));
 
                         }
                         else{
-                            Toast.makeText(SingleActivity.this,"查询床位信息错误！", Toast.LENGTH_LONG).show();
+                            Toast.makeText(TripleActivity.this,"查询床位信息错误！", Toast.LENGTH_LONG).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -177,14 +181,10 @@ public class SingleActivity extends Activity implements View.OnClickListener {
                         JSONObject json = new JSONObject((String) msg.obj);
                         if(json.getString("errcode").equals("0")){
                             //选宿舍成功
-                            Toast.makeText(SingleActivity.this,"选宿舍成功了！", Toast.LENGTH_LONG).show();
-//                            Intent i = new Intent(SingleActivity.this, SuccessActivity.class);
-//                            i.putExtra("stuid",stuData.getString("studentid"));
-//                            startActivity(i);
-//                            SingleActivity.this.finish();
+                            Toast.makeText(TripleActivity.this,"选宿舍成功了！", Toast.LENGTH_LONG).show();
                         }
                         else{
-                            Toast.makeText(SingleActivity.this,"不知道为啥失败了！", Toast.LENGTH_LONG).show();
+                            Toast.makeText(TripleActivity.this,"不知道为啥失败了！", Toast.LENGTH_LONG).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -221,7 +221,9 @@ public class SingleActivity extends Activity implements View.OnClickListener {
                     con.setConnectTimeout(8000);
                     con.setReadTimeout(8000);
                     //请求参数
-                    String para = "num=1"+"&stuid="+stuData.getString("studentid")+"&buildingNo="+buildingNum;
+                    String para = "num=4"+"&stuid="+stuData.getString("studentid")+"&buildingNo="+buildingNum
+                            +"&stu1id="+stu1id.getText().toString()+"&v1code"+v1code.getText().toString()
+                            +"&stu2id="+stu2id.getText().toString()+"&v2code"+v2code.getText().toString();
                     Log.d("debug",para);
                     //设置请求头
                     con.setRequestProperty("Content-Type","application/x-www-form-urlencoded");

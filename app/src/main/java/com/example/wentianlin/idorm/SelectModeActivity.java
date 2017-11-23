@@ -23,6 +23,16 @@ public class SelectModeActivity extends Activity implements View.OnClickListener
         Intent i = getIntent();
         stuid = i.getStringExtra("stuid");
 
+        TextView t1 = (TextView)findViewById(R.id.singleModeText);
+        t1.setOnClickListener(this);
+        TextView t2 = (TextView)findViewById(R.id.doubleModeText);
+        t2.setOnClickListener(this);
+        TextView t3 = (TextView)findViewById(R.id.tripleModeText);
+        t3.setOnClickListener(this);
+        TextView t4 = (TextView)findViewById(R.id.quadrupleModeText);
+        t4.setOnClickListener(this);
+
+
     }
     @Override
     public void onClick(View v) {
@@ -34,12 +44,21 @@ public class SelectModeActivity extends Activity implements View.OnClickListener
         }
         else if(v.getId() == R.id.doubleModeText){
             //双人办理
+            Intent i = new Intent(SelectModeActivity.this, DoubleActivity.class);
+            i.putExtra("stuid",stuid);
+            startActivity(i);
         }
         else if(v.getId() == R.id.tripleModeText){
             //三人办理
+            Intent i = new Intent(SelectModeActivity.this, TripleActivity.class);
+            i.putExtra("stuid",stuid);
+            startActivity(i);
         }
         else if(v.getId() == R.id.quadrupleModeText){
             //四人办理
+            Intent i = new Intent(SelectModeActivity.this, QuadrupleActivity.class);
+            i.putExtra("stuid",stuid);
+            startActivity(i);
         }
     }
 }
