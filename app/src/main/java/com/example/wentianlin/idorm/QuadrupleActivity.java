@@ -187,6 +187,10 @@ public class QuadrupleActivity extends Activity implements View.OnClickListener 
                         if(json.getString("errcode").equals("0")){
                             //选宿舍成功
                             Toast.makeText(QuadrupleActivity.this,"选宿舍成功了！", Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(QuadrupleActivity.this, InfoActivity.class);
+                            i.putExtra("stuid",stuData.getString("studentid"));
+                            startActivity(i);
+                            QuadrupleActivity.this.finish();
                         }
                         else{
                             Toast.makeText(QuadrupleActivity.this,"不知道为啥失败了！", Toast.LENGTH_LONG).show();

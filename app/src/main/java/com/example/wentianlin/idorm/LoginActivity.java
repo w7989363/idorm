@@ -55,11 +55,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     try {
                         JSONObject data = new JSONObject((String) msg.obj);
                         if(data.getString("errcode").equals("0")){
-                            getDetail(numEdit.getText().toString());
-//                        Intent i = new Intent(LoginActivity.this, SingleActivity.class);
-//                        i.putExtra("stu_num",numEdit.getText().toString());
-//                        startActivity(i);
+                            //getDetail(numEdit.getText().toString());
+
                             Toast.makeText(LoginActivity.this,"登录成功！", Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(LoginActivity.this, InfoActivity.class);
+                            i.putExtra("stuid",numEdit.getText().toString());
+                            startActivity(i);
                         }
                         else{
                             Toast.makeText(LoginActivity.this,"学号或密码错误！", Toast.LENGTH_LONG).show();

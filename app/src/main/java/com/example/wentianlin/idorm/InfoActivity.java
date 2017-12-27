@@ -8,6 +8,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +43,7 @@ public class InfoActivity extends Activity implements View.OnClickListener{
     private TextView statusText;
     private TextView buildingText;
     private TextView roomText;
+    private Button btn;
 
 
 
@@ -59,13 +61,17 @@ public class InfoActivity extends Activity implements View.OnClickListener{
         statusText = (TextView)findViewById(R.id.statusText);
         buildingText = (TextView)findViewById(R.id.buildingText);
         roomText = (TextView)findViewById(R.id.roomText);
+        btn = (Button)findViewById(R.id.nextBtn);
+        btn.setOnClickListener(this);
 
         getStuDetail(stuid);
     }
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.singleModeText){
-
+        if(v.getId() == R.id.nextBtn){
+            Intent i = new Intent(InfoActivity.this, SelectModeActivity.class);
+            i.putExtra("stuid",stuidText.getText().toString());
+            startActivity(i);
         }
 
     }
@@ -81,10 +87,16 @@ public class InfoActivity extends Activity implements View.OnClickListener{
                             stuNameText.setText(stuData.getString("name"));
                             stuidText.setText(stuData.getString("studentid"));
                             genderText.setText(stuData.getString("gender"));
-                            buildingText.setText(stuData.getString("building"));
-                            roomText.setText(stuData.getString("room"));
-
-
+                            if(stuData.isNull("building")){
+                                statusText.setText("未办理");
+                                btn.setVisibility(View.VISIBLE);
+                            }
+                            else{
+                                statusText.setText("已办理");
+                                buildingText.setText(stuData.getString("building"));
+                                roomText.setText(stuData.getString("room"));
+                                btn.setVisibility(View.INVISIBLE);
+                            }
                         }
                         else{
                             Toast.makeText(InfoActivity.this,"学号错误！", Toast.LENGTH_LONG).show();

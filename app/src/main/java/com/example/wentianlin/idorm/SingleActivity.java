@@ -178,10 +178,12 @@ public class SingleActivity extends Activity implements View.OnClickListener {
                         if(json.getString("errcode").equals("0")){
                             //选宿舍成功
                             Toast.makeText(SingleActivity.this,"选宿舍成功了！", Toast.LENGTH_LONG).show();
-//                            Intent i = new Intent(SingleActivity.this, SuccessActivity.class);
-//                            i.putExtra("stuid",stuData.getString("studentid"));
-//                            startActivity(i);
-//                            SingleActivity.this.finish();
+                            Intent i = new Intent(SingleActivity.this, InfoActivity.class);
+                            i.putExtra("stuid",stuData.getString("studentid"));
+                            startActivity(i);
+                            SingleActivity.this.finish();
+
+
                         }
                         else{
                             Toast.makeText(SingleActivity.this,"不知道为啥失败了！", Toast.LENGTH_LONG).show();

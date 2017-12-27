@@ -83,7 +83,7 @@
         android:id="@+id/statusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="已办理"
+        android:text=""
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp"
         android:layout_alignParentRight="true"
@@ -106,7 +106,7 @@
         android:id="@+id/buildingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5"
+        android:text=""
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp"
         android:layout_alignParentRight="true"
@@ -129,13 +129,28 @@
         android:id="@+id/roomText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5425"
+        android:text=""
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp"
         android:layout_alignParentRight="true"
         android:paddingRight="10dp"
         android:paddingTop="5dp"
         android:layout_below="@+id/buildingText"/>
+
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="选宿舍"
+        android:id="@+id/nextBtn"
+        android:textColor="@android:color/white"
+        android:background="@android:color/background_dark"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_below="@+id/roomText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible" />
 
 
 
