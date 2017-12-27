@@ -27,6 +27,13 @@
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:text="使用学号和密码登录" />-->
+    <ImageView
+        android:id="@+id/pkulogo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:src="@drawable/pkulogo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/numText"
@@ -34,8 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
         android:text="学号："
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="5dp"
         android:textColor="@android:color/black"
+        android:layout_below="@+id/pkulogo"
         android:textSize="20sp"/>
 
     <!-- editText of  userName -->
@@ -45,9 +53,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/numText"
         android:gravity="center_horizontal"
+        android:layout_below="@+id/pkulogo"
         android:ems="10"
         android:text="1701210921"
         android:singleLine="true"

@@ -104,11 +104,16 @@ public class DoubleActivity  extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         //点击提交按钮
         if(v.getId() == R.id.submitBtn){
-            //获取宿舍号
-            String buildingNum = (String) buildingSpin.getSelectedItem();
-            Log.d("debug","select building:"+buildingNum);
-            selectRoom(buildingNum);
-
+            //检查完整性
+            if(stu1id.getText().toString().equals("") || v1code.getText().toString().equals("")){
+                Toast.makeText(DoubleActivity.this,"请填写完整信息！", Toast.LENGTH_LONG).show();
+            }
+            else{
+                //获取宿舍号
+                String buildingNum = (String) buildingSpin.getSelectedItem();
+                Log.d("debug","select building:"+buildingNum);
+                selectRoom(buildingNum);
+            }
         }
     }
 
@@ -163,7 +168,7 @@ public class DoubleActivity  extends Activity implements View.OnClickListener {
                             }
                             //设置spinner适配器
                             buildingSpin.setAdapter(new ArrayAdapter<String>(DoubleActivity.this,android.R.layout.simple_spinner_item,buildingData));
-
+                            submitBtn.setVisibility(View.VISIBLE);
                         }
                         else{
                             Toast.makeText(DoubleActivity.this,"查询床位信息错误！", Toast.LENGTH_LONG).show();

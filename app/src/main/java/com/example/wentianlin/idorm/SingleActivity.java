@@ -163,7 +163,7 @@ public class SingleActivity extends Activity implements View.OnClickListener {
                             }
                             //设置spinner适配器
                             buildingSpin.setAdapter(new ArrayAdapter<String>(SingleActivity.this,android.R.layout.simple_spinner_item,buildingData));
-
+                            submitBtn.setVisibility(View.VISIBLE);
                         }
                         else{
                             Toast.makeText(SingleActivity.this,"查询床位信息错误！", Toast.LENGTH_LONG).show();
@@ -177,7 +177,7 @@ public class SingleActivity extends Activity implements View.OnClickListener {
                         JSONObject json = new JSONObject((String) msg.obj);
                         if(json.getString("errcode").equals("0")){
                             //选宿舍成功
-                            Toast.makeText(SingleActivity.this,"选宿舍成功了！", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SingleActivity.this,"选宿舍成功！", Toast.LENGTH_LONG).show();
                             Intent i = new Intent(SingleActivity.this, InfoActivity.class);
                             i.putExtra("stuid",stuData.getString("studentid"));
                             startActivity(i);

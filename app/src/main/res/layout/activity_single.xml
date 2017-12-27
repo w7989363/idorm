@@ -135,6 +135,7 @@
         android:src="@drawable/submit_btn"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/buildingNumText"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"/>
 
 </RelativeLayout>

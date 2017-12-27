@@ -139,9 +139,9 @@
 
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="130dp"
         android:layout_height="50dp"
-        android:text="选宿舍"
+        android:text="开始选宿舍"
         android:id="@+id/nextBtn"
         android:textColor="@android:color/white"
         android:background="@android:color/background_dark"
